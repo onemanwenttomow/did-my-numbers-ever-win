@@ -66,9 +66,14 @@ No., Day,DD,MMM,YYYY, N1,N2,N3,N4,N5,N6,BN,   Jackpot, Wins,   Machine  ,Set`,
     });
     lottoResults.shift();
     console.log(
-      "lottoResults: ", lottoResults
-                  
-    );
+      "lottoResults: ", 
+      lottoResults[0].winningNumbers
+      .sort((a, b) => a - b)
+      .toString() === 
+      [ ' 34', '13', '03', '51', '50', '14', '11' ]
+      .sort((a, b) => a - b)
+      .toString()
+      );
   }
 }
 </script>
