@@ -1,29 +1,7 @@
 <template>
   <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        did-my-numbers-ever-win
-      </h1>
-      <h2 class="subtitle">
-        My geometric Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+    <div v-bind:key="num" v-for="num in mainNumbers" class="mainNumber">
+      [<span class="num">{{num}}</span>]
     </div>
   </div>
 </template>
@@ -37,7 +15,8 @@ export default {
   },
   data() {
     return {
-      lottoResults: []
+      lottoResults: [],
+      mainNumbers: [...Array(59).keys()].map(num => num+1)
     }
   },
   async asyncData ({ $axios }) {
@@ -45,7 +24,8 @@ export default {
     return { lottoResults: lottoResultsFromApi }
   },
   mounted: function() {
-    const winningData = this.checkForWinningResults([30,27,40,36,42,23,58]);
+    console.log(this.mainNumbers)
+    const winningData = this.checkForWinningResults(['03','13','14','34','50','51']);
     console.log("winningData: ", winningData.length)
   },
   methods: {
@@ -65,34 +45,29 @@ export default {
 </script>
 
 <style>
+
 .container {
+  width: 80vw;
   margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-items: center;
+  background-color: #F8E7E7;
+
+}
+.mainNumber {
+  font-family: 'Kanit', sans-serif;
+  color: #aa2d27;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.num {
+  font-weight: bolder;
+  width: 24px;
+  display: inline-block;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
 </style>
