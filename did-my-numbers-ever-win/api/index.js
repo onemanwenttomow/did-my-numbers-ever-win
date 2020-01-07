@@ -28,7 +28,7 @@ No., Day,DD,MMM,YYYY, N1,N2,N3,N4,N5,N6,BN,   Jackpot, Wins,   Machine  ,Set`,
             if (splitRow.length > 0) {
                 return {
                     jackpot: splitRow[12],
-                    winningNumbers: splitRow.filter((num, i) => i >= 5 && i <= 10),
+                    winningNumbers: splitRow.filter((num, i) => i >= 5 && i <= 10).map(num => Number(num)),
                     date: splitRow.filter((num, i) => i >= 1 && i <= 4).join(" ")
                 };
             }

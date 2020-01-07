@@ -42,7 +42,6 @@ export default {
       const winningNumbers = this.lottoResults.filter(el => {
         return el.winningNumbers
         .sort((a, b) => a - b)
-        .map(el => el.trim())
         .toString() === 
         userNumbers
         .sort((a, b) => a - b)
