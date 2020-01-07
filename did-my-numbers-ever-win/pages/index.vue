@@ -40,16 +40,18 @@ export default {
     },
     checkForWinningResults: function(userNumbers) {
       const winningNumbers = this.lottoResults.filter(el => {
-        return el.winningNumbers
+        if (el.winningNumbers
         .sort((a, b) => a - b)
         .toString() === 
         userNumbers
         .sort((a, b) => a - b)
-        .toString()
+        .toString()) {
+          return el 
+        }
       });
-      console.log(userNumbers)
+      console.log(winningNumbers, userNumbers)
       if (winningNumbers.length > 0) {
-        console.log("winner!!!")
+        console.log("winner!!!", winningNumbers[0].jackpot.trim())
       } else {
         console.log("no winner!")
       }
