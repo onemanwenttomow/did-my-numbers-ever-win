@@ -4,9 +4,9 @@
       v-bind:key="num.number" 
       v-for="num in mainNumbers" 
       class="mainNumber"
-      v-bind:class="usersNumbers.includes(num) ? 'selected' : ''"
       @click="updateSelectedNumber(num)"
     >
+      <div v-if="usersNumbers.includes(num)" class="struck-through"></div>
       [<span class="num">{{num}}</span>]
     </div>
   </div>
@@ -69,19 +69,42 @@ export default {
   background-color: #F8E7E7;
 
 }
+
 .mainNumber {
+  position: relative;
   font-family: 'Kanit', sans-serif;
   color: #aa2d27;
   margin: 10px;
   font-size: 20px;
   font-weight: bold;
-
+  cursor: pointer;
 }
+
 .num {
   font-weight: bolder;
   width: 24px;
   display: inline-block;
   text-align: center;
+}
+
+.struck-through {
+  position: absolute;
+    width: 0px;
+    height: 5px;
+    background-color: black;
+    top: 14px;
+    left: 2px;
+    animation: strikeout 0.3s forwards;
+}
+
+@keyframes strikeout {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 34px;
+  }
 }
 
 </style>
