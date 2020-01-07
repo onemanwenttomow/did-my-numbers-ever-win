@@ -51,7 +51,7 @@ export default {
       });
       console.log(winningNumbers, userNumbers)
       if (winningNumbers.length > 0) {
-        console.log("winner!!!", winningNumbers[0].jackpot.trim())
+        console.log("winner!!!", winningNumbers[0].jackpot)
       } else {
         console.log("no winner!")
       }
