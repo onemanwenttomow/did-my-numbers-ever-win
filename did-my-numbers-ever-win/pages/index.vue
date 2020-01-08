@@ -1,19 +1,24 @@
 <template>
-  <div class="container">
-    <Card @userNumbers="checkForWinningResults"/>
-  </div>
+    <div class="main-container">
+      <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
+      <NumbersLeft :numbersLeft=numbersLeft />
+    </div>
 </template>
 
 <script>
-import Card from '~/components/Card.vue'
+import Card from '~/components/Card.vue';
+import NumbersLeft from '~/components/NumbersLeft.vue'
+
 
 export default {
   components: {
-    Card
+    Card,
+    NumbersLeft
   },
   data() {
     return {
       lottoResults: [],
+      numbersLeft: 6
     }
   },
   async asyncData ({ $axios }) {
@@ -21,6 +26,10 @@ export default {
     return { lottoResults: lottoResultsFromApi }
   },
   methods: {
+    decrementNumber: function(num) {
+      console.log("num:", num);
+      this.numbersLeft = num;
+    },
     checkForWinningResults: function(userNumbers) {
       const winningNumbers = this.lottoResults.filter(el => {
         if (el.winningNumbers
@@ -45,14 +54,9 @@ export default {
 
 <style>
 
-.container {
+.main-container {
   width: 500px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  justify-items: center;
-  background-color: #F8E7E7;
-
 }
 
 </style>

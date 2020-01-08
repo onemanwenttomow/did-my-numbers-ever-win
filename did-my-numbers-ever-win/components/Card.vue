@@ -27,6 +27,7 @@ export default {
         return;
       }
       this.usersNumbers.push(clickedNum);
+      this.$emit('numbersLeft', 6 - this.usersNumbers.length)
       if (this.usersNumbers.length === 6) {
           this.$emit('userNumbers', this.usersNumbers)
       }
@@ -36,6 +37,16 @@ export default {
 </script>
 
 <style>
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  justify-items: center;
+  background-color: #F8E7E7;
+
+}
 
 .mainNumber {
   position: relative;
