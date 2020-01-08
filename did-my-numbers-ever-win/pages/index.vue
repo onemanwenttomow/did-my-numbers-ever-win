@@ -25,7 +25,7 @@ export default {
       lottoResults: [],
       numbersLeft: 6,
       checkButtonIsVisible: false,
-      isChecking: true
+      isChecking: false
     }
   },
   async asyncData ({ $axios }) {

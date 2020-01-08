@@ -5,10 +5,9 @@ const app = (exports.app = express());
 app.get("/get-giphy", async (req, res) => {
     console.log("made it ot get giphy")
     const { data } = await axios.get(
-        "https://api.giphy.com/v1/gifs/random?api_key=B5li4fz5Gx5JzooYv6kXAFCLGQ78Bqaj&tag=nervous-smile&rating=G"
+        "https://api.giphy.com/v1/gifs/search?api_key=B5li4fz5Gx5JzooYv6kXAFCLGQ78Bqaj&q=nervous&limit=20&offset=0&rating=G&lang=en"
     );
-    console.log(data)
-    res.json(data);
+    res.json({imgUrl: data.data[Math.floor(Math.random() * 20)].images.downsized_large.url});
 });
 
 
