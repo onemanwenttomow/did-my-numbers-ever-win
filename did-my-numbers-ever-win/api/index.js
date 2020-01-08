@@ -2,6 +2,16 @@ const express = require("express");
 const axios = require("axios");
 const app = (exports.app = express());
 
+app.get("/get-giphy", async (req, res) => {
+    console.log("made it ot get giphy")
+    const { data } = await axios.get(
+        "https://api.giphy.com/v1/gifs/random?api_key=B5li4fz5Gx5JzooYv6kXAFCLGQ78Bqaj&tag=nervous-smile&rating=G"
+    );
+    console.log(data)
+    res.json(data);
+});
+
+
 app.get("/get-all-national-lottery-jackpots", async (req, res) => {
     const lottoResultsCsv = await axios.get(
         "http://lottery.merseyworld.com/cgi-bin/lottery?days=2&Machine=Z&Ballset=0&order=0&show=1&year=0&display=CSV"

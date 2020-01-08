@@ -2,23 +2,30 @@
     <div class="main-container">
       <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
       <NumbersLeft :numbersLeft=numbersLeft />
+      <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking"/>
+      <GifhyBox v-if="isChecking"/>
     </div>
 </template>
 
 <script>
 import Card from '~/components/Card.vue';
 import NumbersLeft from '~/components/NumbersLeft.vue'
-
+import CheckButton from '~/components/CheckButton.vue'
+import GifhyBox from '~/components/GifhyBox.vue'
 
 export default {
   components: {
     Card,
-    NumbersLeft
+    NumbersLeft,
+    CheckButton,
+    GifhyBox
   },
   data() {
     return {
       lottoResults: [],
-      numbersLeft: 6
+      numbersLeft: 6,
+      checkButtonIsVisible: false,
+      isChecking: true
     }
   },
   async asyncData ({ $axios }) {
@@ -26,9 +33,15 @@ export default {
     return { lottoResults: lottoResultsFromApi }
   },
   methods: {
+    startChecking: function() {
+      this.isChecking = true;
+      this.checkButtonIsVisible = false
+    },
     decrementNumber: function(num) {
-      console.log("num:", num);
       this.numbersLeft = num;
+      if (num === 0) {
+        this.checkButtonIsVisible = true;
+      }
     },
     checkForWinningResults: function(userNumbers) {
       const winningNumbers = this.lottoResults.filter(el => {
