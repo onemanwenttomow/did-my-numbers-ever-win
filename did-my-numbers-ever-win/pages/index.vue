@@ -32,6 +32,7 @@ export default {
       numbersLeft: 6,
       checkButtonIsVisible: false,
       showGiphyBox: false, 
+      giphyLoaded: false,
       gipyhQuery: '',
       didNumbersWin: false,
       showSpinner: false

@@ -3,7 +3,6 @@ const axios = require("axios");
 const app = (exports.app = express());
 
 app.get("/get-giphy/:query", async (req, res) => {
-    console.log("made it to get giphy", req.params)
     const { data } = await axios.get(
         `https://api.giphy.com/v1/gifs/search?api_key=B5li4fz5Gx5JzooYv6kXAFCLGQ78Bqaj&q=${req.params.query}&limit=20&offset=0&rating=G&lang=en`
     );
