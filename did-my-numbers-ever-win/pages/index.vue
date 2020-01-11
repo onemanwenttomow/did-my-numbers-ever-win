@@ -72,8 +72,8 @@ export default {
       });
       console.log(winningNumbers, userNumbers)
       if (winningNumbers.length > 0) {
-        console.log("winner!!!", );
-        this.winningAmount = Number(winningNumbers[0].jackpot).toLocaleString('en-UK', { style: 'currency', currency: 'GBP' }).
+        console.log("winner!!!", Number(winningNumbers[0].jackpot))
+        this.winningAmount = Number(winningNumbers[0].jackpot).toLocaleString('en-UK', { style: 'currency', currency: 'GBP' }).replace(".00", "");
         this.didNumbersWin = true;
       } else {
         console.log("no winner!")
