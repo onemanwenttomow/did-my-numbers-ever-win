@@ -1,12 +1,19 @@
 <template>
     <div>
+        <Spinner v-if="!imgUrl" />
         <img class="giphy" :src="imgUrl" alt="">
     </div>
 </template>
 
 <script>
 
+import Spinner from '~/components/Spinner.vue'
+
+
 export default {
+   components: {
+    Spinner
+  },
   props: ['searchTerm', 'query'],
   data() {
     return {
@@ -14,9 +21,7 @@ export default {
     }
   },
 
-  mounted: function() {
-    console.log("GIPHY mounted!", this.query);
-    
+  mounted: function() {    
     fetch('/api/get-giphy/' + this.query).then(data => {
         return data.json();
     }).then((myJson) => {

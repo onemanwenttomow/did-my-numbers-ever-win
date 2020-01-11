@@ -5,7 +5,7 @@
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking"/>
       <GifhyBox v-if="showGiphyBox" :query=gipyhQuery :key="gipyhQuery"/>
       <Spinner v-if="showSpinner"/>
-      <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin />
+      <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin :winningAmount=winningAmount />
     </div>
 </template>
 
@@ -30,12 +30,13 @@ export default {
     return {
       lottoResults: [],
       numbersLeft: 6,
-      checkButtonIsVisible: false,
+      checkButtonIsVisible: true,
       showGiphyBox: false, 
       giphyLoaded: false,
       gipyhQuery: '',
       didNumbersWin: false,
-      showSpinner: false
+      showSpinner: false,
+      winningAmount: 0
     }
   },
   async asyncData ({ $axios }) {
@@ -57,9 +58,6 @@ export default {
     },
     decrementNumber: function(num) {
       this.numbersLeft = num;
-      if (num === 0) {
-        this.checkButtonIsVisible = true;
-      }
     },
     checkForWinningResults: function(userNumbers) {
       const winningNumbers = this.lottoResults.filter(el => {
@@ -74,7 +72,8 @@ export default {
       });
       console.log(winningNumbers, userNumbers)
       if (winningNumbers.length > 0) {
-        console.log("winner!!!", winningNumbers[0].jackpot)
+        console.log("winner!!!", );
+        this.winningAmount = Number(winningNumbers[0].jackpot).toLocaleString('en-UK', { style: 'currency', currency: 'GBP' }).
         this.didNumbersWin = true;
       } else {
         console.log("no winner!")

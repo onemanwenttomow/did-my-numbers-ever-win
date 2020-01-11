@@ -1,13 +1,13 @@
 <template>
     <div class="outcome-container">
-        <h2>{{outComeText}}</h2>
+        <h2>{{outComeText}} <span v-if="winningAmount">{{winningAmount}}</span></h2>
     </div>
 </template>
 
 <script>
 
 export default {
-    props: ['isWinningNumbers'],
+    props: ['isWinningNumbers', 'winningAmount'],
     data() {
         return {
             outComeText: ''
