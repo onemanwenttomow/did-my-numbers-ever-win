@@ -45,7 +45,7 @@ export default {
   grid-template-columns: repeat(10, 1fr);
   justify-items: center;
   background-color: #F8E7E7;
-
+  grid-column: 1/ -1;
 }
 
 .mainNumber {

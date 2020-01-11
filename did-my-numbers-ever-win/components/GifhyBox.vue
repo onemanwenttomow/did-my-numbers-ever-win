@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  props: ['searchTerm'],
+  props: ['searchTerm', 'query'],
   data() {
     return {
       imgUrl: ''
@@ -15,8 +15,9 @@ export default {
   },
 
   mounted: function() {
-    console.log("GIPHY mounted!", );
-    fetch('/api/get-giphy').then(data => {
+    console.log("GIPHY mounted!", this.query);
+    
+    fetch('/api/get-giphy/' + this.query).then(data => {
         return data.json();
     }).then((myJson) => {
         console.log(myJson.imgUrl);
@@ -29,7 +30,7 @@ export default {
 
 <style>
 .giphy {
-    width: 500px;
+    width: 250px;
 }
 
 </style>
