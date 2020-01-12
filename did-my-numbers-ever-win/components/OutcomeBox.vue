@@ -44,7 +44,7 @@ export default {
 }
 
 .winning-amount {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 </style>

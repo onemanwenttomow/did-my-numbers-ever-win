@@ -1,5 +1,5 @@
 <template>
-    <h1 class="main-header">Did your numbers EVER win?</h1>
+    <h1 class="main-header">Did your numbers EVER win? 😬</h1>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
     grid-column: 1/-1;
     text-align: center;
     margin: 20px 0;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 </style>

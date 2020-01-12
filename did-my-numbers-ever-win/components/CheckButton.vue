@@ -24,7 +24,19 @@ export default {
 }
 
 .btn {
-    font-size: 20px;
+    border: 2px solid #aa2d27;
+    color: #AA2D26;
+    border-radius: 5px;
+    padding: 5px 20px;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btn[disabled] {
+    border: 2px solid #ffd1cd;
+    color:#ffd1cd;
+    cursor: auto;
 }
 
 
