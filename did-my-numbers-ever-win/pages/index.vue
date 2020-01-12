@@ -1,5 +1,6 @@
 <template>
     <div class="main-container">
+      <TheHeader />
       <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
       <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
@@ -12,6 +13,7 @@
 </template>
 
 <script>
+import TheHeader from '~/components/TheHeader.vue';
 import Card from '~/components/Card.vue';
 import NumbersLeft from '~/components/NumbersLeft.vue'
 import CheckButton from '~/components/CheckButton.vue'
@@ -21,6 +23,7 @@ import OutcomeBox from '~/components/OutcomeBox.vue'
 
 export default {
   components: {
+    TheHeader, 
     Card,
     NumbersLeft,
     CheckButton,

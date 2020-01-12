@@ -46,6 +46,7 @@ export default {
   justify-items: center;
   background-color: #F8E7E7;
   grid-column: 1/ -1;
+  grid-row: 2 / 3;
 }
 
 .mainNumber {
@@ -54,12 +55,12 @@ export default {
   color: #aa2d27;
   margin: 5px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
 }
 
 .num {
-  font-weight: bolder;
+  font-weight: 700;
   width: 24px;
   display: inline-block;
   text-align: center;

@@ -23,7 +23,14 @@ export default {
   align-items: center;
   padding: 10px;
   font-size: 20px;
-  font-weight: bold;
+}
+
+.numbers-left-container h2 {
+  font-weight: 600;
+}
+
+.numbers-left-container span {
+  font-weight: 700;
 }
 
 .numbers-left {

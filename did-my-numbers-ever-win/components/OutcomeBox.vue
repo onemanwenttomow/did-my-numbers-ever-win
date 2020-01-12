@@ -36,7 +36,7 @@ export default {
 
 .outcome-container {
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 3/4;
     background-color: #F8E7E7;
     display: flex;
     justify-content: center;
