@@ -1,6 +1,5 @@
 <template>
-    <div class="main-container">
-      <TheHeader />
+    <fragment>
       <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
       <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
@@ -9,11 +8,10 @@
         <Spinner v-if="showSpinner"/>
       </div>
       <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin :winningAmount=winningAmount :giphyLoaded=giphyLoaded />
-    </div>
+    </fragment>
 </template>
 
 <script>
-import TheHeader from '~/components/TheHeader.vue';
 import Card from '~/components/Card.vue';
 import NumbersLeft from '~/components/NumbersLeft.vue'
 import CheckButton from '~/components/CheckButton.vue'
@@ -23,7 +21,6 @@ import OutcomeBox from '~/components/OutcomeBox.vue'
 
 export default {
   components: {
-    TheHeader, 
     Card,
     NumbersLeft,
     CheckButton,
@@ -82,7 +79,6 @@ export default {
           return el 
         }
       });
-      console.log(winningNumbers, userNumbers)
       if (winningNumbers.length > 0) {
         console.log("winner!!!", Number(winningNumbers[0].jackpot))
         this.winningAmount = Number(winningNumbers[0].jackpot).toLocaleString('en-UK', { style: 'currency', currency: 'GBP' }).replace(".00", "");
