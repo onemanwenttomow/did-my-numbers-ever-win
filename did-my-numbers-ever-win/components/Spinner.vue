@@ -20,6 +20,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #F8E7E7;
+    height: 200px;
+
 }
 
 .lds-facebook {

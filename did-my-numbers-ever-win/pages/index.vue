@@ -1,11 +1,13 @@
 <template>
     <div class="main-container">
       <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
-      <NumbersLeft :numbersLeft=numbersLeft />
-      <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking"/>
-      <GifhyBox v-if="showGiphyBox" :query=gipyhQuery :key="gipyhQuery"/>
-      <Spinner v-if="showSpinner"/>
-      <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin :winningAmount=winningAmount />
+      <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
+      <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
+      <GifhyBox v-if="showGiphyBox" :query=gipyhQuery :key="gipyhQuery" @giphyLoaded="giphyLoaded = true"/>
+      <div>
+        <Spinner v-if="showSpinner"/>
+      </div>
+      <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin :winningAmount=winningAmount :giphyLoaded=giphyLoaded />
     </div>
 </template>
 
@@ -26,8 +28,12 @@ export default {
     Spinner, 
     OutcomeBox
   },
+    updated: function() {
+    console.log(this.numbersLeft, this.numbersLeft !== 0)
+  },
   data() {
     return {
+      showStartMessage: true,
       lottoResults: [],
       numbersLeft: 6,
       checkButtonIsVisible: true,
@@ -46,10 +52,13 @@ export default {
   methods: {
     startChecking: function() {
       this.showGiphyBox = true;
+      this.giphyLoaded = false;
       this.checkButtonIsVisible = false;
+      this.showStartMessage = false;
       this.gipyhQuery = 'nervous';
       this.showSpinner = true;
       setTimeout(() => {
+        this.giphyLoaded = false;
         this.showSpinner = false;
         this.didNumbersWin ? 
           this.gipyhQuery = 'awkward' :
@@ -84,6 +93,16 @@ export default {
 </script>
 
 <style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+    color: #aa2d27;
+    font-family: 'Kanit', sans-serif;
+    color: #aa2d27;
+}
 
 .main-container {
   display: grid;

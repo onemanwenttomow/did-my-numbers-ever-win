@@ -1,18 +1,21 @@
 <template>
     <div class="btn-container">
-        <button class="btn" @click="$emit('userClicked')">Check now!</button>
+        <button :disabled="numbersLeft > 0" class="btn" @click="$emit('userClicked')">Check now!</button>
     </div>
 </template>
 
 <script>
 
 export default {
-  
+    props: ['numbersLeft'],
 }
 </script>
 
+
 <style>
 .btn-container {
+    background-color: #F8E7E7;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
