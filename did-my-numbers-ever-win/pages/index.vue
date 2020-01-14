@@ -1,13 +1,24 @@
 <template>
     <fragment>
-      <Card @userNumbers="checkForWinningResults" @numbersLeft="decrementNumber"/>
+      <Card 
+        @userNumbers="checkForWinningResults" 
+        @numbersLeft="decrementNumber" 
+        :resetUsersNumbers=resetUsersNumbers
+        :key=resetUsersNumbers
+      />
       <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
       <GifhyBox v-if="showGiphyBox" :query=gipyhQuery :key="gipyhQuery" @giphyLoaded="giphyLoaded = true"/>
       <div>
         <Spinner v-if="showSpinner"/>
       </div>
-      <OutcomeBox v-if="!showSpinner && showGiphyBox" :isWinningNumbers=didNumbersWin :winningAmount=winningAmount :giphyLoaded=giphyLoaded />
+      <OutcomeBox 
+        v-if="!showSpinner && showGiphyBox" 
+        :isWinningNumbers=didNumbersWin 
+        :winningAmount=winningAmount 
+        :giphyLoaded=giphyLoaded 
+        @restart=restart
+      />
     </fragment>
 </template>
 
@@ -28,9 +39,6 @@ export default {
     Spinner, 
     OutcomeBox
   },
-    updated: function() {
-    console.log(this.numbersLeft, this.numbersLeft !== 0)
-  },
   data() {
     return {
       showStartMessage: true,
@@ -42,7 +50,8 @@ export default {
       gipyhQuery: '',
       didNumbersWin: false,
       showSpinner: false,
-      winningAmount: 0
+      winningAmount: 0, 
+      resetUsersNumbers: false
     }
   },
   async asyncData ({ $axios }) {
@@ -64,6 +73,19 @@ export default {
           this.gipyhQuery = 'awkward' :
           this.gipyhQuery = 'relief'
       }, 5000);
+    },
+    restart: function() {
+      this.resetUsersNumbers = true;
+      this.showStartMessage = true;
+      this.lottoResults = [];
+      this.numbersLeft= 6;
+      this.checkButtonIsVisible = true;
+      this.showGiphyBox = false;
+      this.giphyLoaded =false;
+      this.gipyhQuery = '';
+      this.didNumbersWin = false;
+      this.showSpinner - false;
+      this.winningAmount = 0;
     },
     decrementNumber: function(num) {
       this.numbersLeft = num;

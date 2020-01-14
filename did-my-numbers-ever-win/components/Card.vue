@@ -21,6 +21,8 @@ export default {
       usersNumbers: []
     }
   },
+  props: ['resetUsersNumbers'],
+ 
   methods: {
     updateSelectedNumber: function(clickedNum) {
       if (this.usersNumbers.length >= 6 || this.usersNumbers.includes(clickedNum)) {

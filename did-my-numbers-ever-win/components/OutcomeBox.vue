@@ -2,6 +2,7 @@
     <div class="outcome-container">
         <Spinner v-if="!giphyLoaded" />
         <h2 v-else>{{outComeText}} <span class="winning-amount" v-if="winningAmount">{{winningAmount}}</span></h2>
+        <button v-if="giphyLoaded" class="btn" @click="$emit('restart')">Try Again?</button>
     </div>
 </template>
 
@@ -39,7 +40,8 @@ export default {
     grid-row: 3/4;
     background-color: #F8E7E7;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
