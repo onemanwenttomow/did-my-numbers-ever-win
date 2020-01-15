@@ -1,8 +1,8 @@
 <template>
   <div class="main-container">
     <TheHeader />
-
     <nuxt />
+    <TheFooter />
   </div>
 </template>
 
@@ -10,10 +10,12 @@
 
 
 import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
 
 export default {
   components: {
-    TheHeader
+    TheHeader, 
+    TheFooter
   }
 }
 
