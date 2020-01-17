@@ -1,5 +1,5 @@
 <template>
-    <footer>Built with Nuxt. Made with 💟 by <a href="https://pwanderson.com/">Peter Anderson</a> | Imprint</footer>
+    <footer>Built with  <a href="https://nuxtjs.org/">Nuxt</a>. Made with 💟 by <a href="https://pwanderson.com/">Peter Anderson</a> | Imprint</footer>
 </template>
 
 <script>
