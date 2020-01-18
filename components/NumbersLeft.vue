@@ -23,6 +23,8 @@ export default {
   align-items: center;
   padding: 10px;
   font-size: 20px;
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
 }
 
 .numbers-left-container h2 {
