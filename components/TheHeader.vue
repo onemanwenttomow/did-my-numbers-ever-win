@@ -1,5 +1,8 @@
 <template>
-    <h1 class="main-header">Did your numbers EVER win? 😬</h1>
+    <nuxt-link class="main-header" to="/test">
+        <h1 >Did your numbers EVER win? 😬</h1>
+
+    </nuxt-link>
 </template>
 
 <script>
@@ -15,7 +18,8 @@ export default {
     grid-column: 1/-1;
     text-align: center;
     margin: 20px 0;
-    font-size: 30px;
+    font-size: 15px;
+    text-decoration: none;
 }
 
 </style>

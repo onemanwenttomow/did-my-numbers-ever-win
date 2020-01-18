@@ -4,7 +4,6 @@
         @userNumbers="checkForWinningResults" 
         @numbersLeft="decrementNumber" 
         :resetUsersNumbers=resetUsersNumbers
-        :key=lottoResults
       />
       <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
@@ -13,7 +12,6 @@
         <Spinner v-if="showSpinner"/>
       </div>
       <OutcomeBox 
-        :key=lottoResults
         v-if="!showSpinner && showGiphyBox" 
         :isWinningNumbers=didNumbersWin 
         :winningAmount=winningAmount 
