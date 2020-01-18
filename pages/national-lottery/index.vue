@@ -159,6 +159,7 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 250px;
   width: 500px;
   margin: 0 auto;
 }
