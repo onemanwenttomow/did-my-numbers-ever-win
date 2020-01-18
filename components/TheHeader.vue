@@ -13,6 +13,7 @@ export default {
 
 .main-header {
     grid-column: 1/-1;
+    grid-row: 0/1;
     text-align: center;
     margin: 20px 0;
     font-size: 30px;
