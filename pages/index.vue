@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link to="/national-lottery">
+  <a href="/national-lottery">
     <h1>National Lottery</h1>
     
-  </nuxt-link>
+  </a>
 </template>
 
 <script>
