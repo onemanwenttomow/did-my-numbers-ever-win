@@ -13,6 +13,7 @@
         <Spinner v-if="showSpinner"/>
       </div>
       <OutcomeBox 
+        :key=lottoResults
         v-if="!showSpinner && showGiphyBox" 
         :isWinningNumbers=didNumbersWin 
         :winningAmount=winningAmount 
