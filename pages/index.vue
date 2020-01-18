@@ -4,7 +4,7 @@
         @userNumbers="checkForWinningResults" 
         @numbersLeft="decrementNumber" 
         :resetUsersNumbers=resetUsersNumbers
-        :key=resetUsersNumbers
+        :key=lottoResults
       />
       <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
       <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
