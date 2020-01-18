@@ -1,5 +1,24 @@
 <template>
-    <h1>TESTING</h1>
+    <fragment>
+      <Card 
+        @userNumbers="checkForWinningResults" 
+        @numbersLeft="decrementNumber" 
+        :resetUsersNumbers=resetUsersNumbers
+      />
+      <NumbersLeft :numbersLeft=numbersLeft :showStartMessage=showStartMessage />
+      <CheckButton v-if="checkButtonIsVisible" @userClicked="startChecking" :numbersLeft=numbersLeft :key=numbersLeft />
+      <GifhyBox v-if="showGiphyBox" :query=gipyhQuery :key="gipyhQuery" @giphyLoaded="giphyLoaded = true"/>
+      <div>
+        <Spinner v-if="showSpinner"/>
+      </div>
+      <OutcomeBox 
+        v-if="!showSpinner && showGiphyBox" 
+        :isWinningNumbers=didNumbersWin 
+        :winningAmount=winningAmount 
+        :giphyLoaded=giphyLoaded 
+        @restart=restart
+      />
+    </fragment>
 </template>
 
 <script>
@@ -35,8 +54,8 @@ export default {
     }
   },
   async asyncData ({ $axios }) {
-    try {
-      const lottoResultsCsv = await $axios.get(
+    
+    const lottoResultsCsv = await $axios.get(
         "http://lottery.merseyworld.com/cgi-bin/lottery?days=2&Machine=Z&Ballset=0&order=0&show=1&year=0&display=CSV"
     );
     const lottoResults = lottoResultsCsv.data
@@ -68,11 +87,6 @@ No., Day,DD,MMM,YYYY, N1,N2,N3,N4,N5,N6,BN,   Jackpot, Wins,   Machine  ,Set`,
         });
     lottoResults.shift();
     return { lottoResults }
-    } catch(err) {
-      console.log(err)
-    }
-    
-    
   },
   methods: {
     startChecking: function() {
@@ -149,3 +163,4 @@ body {
 }
 
 </style>
+
