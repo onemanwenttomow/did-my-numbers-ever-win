@@ -116,6 +116,7 @@ No., Day,DD,MMM,YYYY, N1,N2,N3,N4,N5,N6,BN,   Jackpot, Wins,   Machine  ,Set`,
       this.didNumbersWin = false;
       this.showSpinner - false;
       this.winningAmount = 0;
+      setTimeout(() => this.resetUsersNumbers = false,500);
     },
     decrementNumber: function(num) {
       this.numbersLeft = num;

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div 
-            v-bind:key="num" 
+            :key="num" 
             v-for="num in mainNumbers" 
             class="mainNumber"
             @click="updateSelectedNumber(num)"
@@ -22,6 +22,18 @@ export default {
     }
   },
   props: ['resetUsersNumbers'],
+
+  mounted: function() {
+    console.log("card mounted!");
+    this.resetUsersNumbers = false;
+  },
+
+  watch: {
+    resetUsersNumbers: function () {
+      console.log("watch running!!! this.resetUsersNumbers", this.resetUsersNumbers)
+      this.usersNumbers = [];
+    }
+  },
  
   methods: {
     updateSelectedNumber: function(clickedNum) {
