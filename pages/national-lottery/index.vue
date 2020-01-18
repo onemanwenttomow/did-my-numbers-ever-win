@@ -159,7 +159,7 @@ body {
 .main-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 250px;
+  grid-template-rows: 80px 250px 200px;
   width: 500px;
   margin: 0 auto;
 }
