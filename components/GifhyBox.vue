@@ -22,11 +22,11 @@ export default {
   },
 
   mounted: function() {    
-    fetch('/api/get-giphy/' + this.query).then(data => {
+    fetch(`https://api.giphy.com/v1/gifs/search?api_key=B5li4fz5Gx5JzooYv6kXAFCLGQ78Bqaj&q=${this.query}&limit=20&offset=0&rating=G&lang=en`).then(data => {
         return data.json();
     }).then((myJson) => {
         this.$emit('giphyLoaded');
-        this.imgUrl = myJson.imgUrl
+        this.imgUrl = myJson.data[Math.floor(Math.random() * 20)].images.downsized_large.url
     });
       
   }
