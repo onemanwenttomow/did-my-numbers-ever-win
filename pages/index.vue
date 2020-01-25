@@ -20,11 +20,4 @@ body {
     color: #aa2d27;
 }
 
-.main-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 500px;
-  margin: 0 auto;
-}
-
 </style>
