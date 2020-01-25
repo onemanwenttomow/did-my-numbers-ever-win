@@ -69,4 +69,11 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+@media screen and (min-width: 320px) and (max-width: 667px) {
+    .main-container {
+      width: 100vw;
+    }
+
+}
 </style>

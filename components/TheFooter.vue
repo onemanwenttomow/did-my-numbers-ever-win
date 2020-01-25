@@ -22,5 +22,13 @@ a {
     color: inherit; 
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+
+    footer {
+        width: 100vw;
+    }
+
+}
+
 
 </style>
