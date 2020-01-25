@@ -70,6 +70,13 @@ html {
   background-color: #35495e;
 }
 
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 500px;
+  margin: 0 auto;
+}
+
 @media screen and (min-width: 320px) and (max-width: 667px) {
     .main-container {
       width: 100vw;

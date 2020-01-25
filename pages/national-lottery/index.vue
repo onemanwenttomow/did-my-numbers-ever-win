@@ -156,13 +156,5 @@ body {
     color: #aa2d27;
 }
 
-.main-container {
-  display: grid;
-  grid-template-columns: 250px 250px;
-  grid-template-rows: 80px 250px 200px;
-  width: 500px;
-  margin: 0 auto;
-}
-
 </style>
 
