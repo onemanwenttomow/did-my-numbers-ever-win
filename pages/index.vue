@@ -1,7 +1,6 @@
 <template>
   <a href="/national-lottery">
-    <h1>National Lottery</h1>
-    
+    <img src="/the-national-lottery-uk.svg" alt="national-lottery-united-kingdom">
   </a>
 </template>
 

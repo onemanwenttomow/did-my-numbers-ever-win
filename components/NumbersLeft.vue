@@ -18,7 +18,8 @@ export default {
 .numbers-left-container {
   background-color: #F8E7E7;
   height: 200px;
-  display: flex;
+  width: 250px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
