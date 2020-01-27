@@ -40,5 +40,11 @@ export default {
     cursor: auto;
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+    .btn-container {
+      grid-row: 2 / 3;
+    }
+}
+
 
 </style>

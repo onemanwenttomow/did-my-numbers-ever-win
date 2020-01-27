@@ -100,4 +100,13 @@ export default {
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+    .container {
+      grid-column: 1/ -1;
+      grid-row: 3 / 4;
+
+    }
+
+}
+
 </style>
