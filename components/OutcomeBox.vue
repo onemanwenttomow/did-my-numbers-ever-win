@@ -54,6 +54,7 @@ export default {
     .outcome-container {
         grid-column: 1/-1;
         grid-row: 3/4;
+        width: 100vw;
     }
 
 }
