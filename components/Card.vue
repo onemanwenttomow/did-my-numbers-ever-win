@@ -60,7 +60,7 @@ export default {
   justify-items: center;
   background-color: #F8E7E7;
   grid-column: 1/ -1;
-  grid-row: 2 / 3;
+  grid-row: 3 / 4;
 }
 
 .mainNumber {
@@ -103,7 +103,9 @@ export default {
 @media screen and (min-width: 320px) and (max-width: 667px) {
     .container {
       grid-column: 1/ -1;
-      grid-row: 3 / 4;
+      grid-row: 4 / 5;
+      grid-template-columns: repeat(6, 1fr);
+      width: 100vw;
 
     }
 

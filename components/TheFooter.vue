@@ -26,6 +26,7 @@ a {
 
     footer {
         width: 100vw;
+        position: relative;
     }
 
 }

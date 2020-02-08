@@ -62,5 +62,14 @@ export default {
   }
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+
+    .spinner-container {
+        display: none;
+    }
+
+}
+
+
 
 </style>

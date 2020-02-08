@@ -1,9 +1,13 @@
 <template>
-  <div class="main-container">
-    <TheHeader />
-    <nuxt />
+  <div>
+    <div class="main-container">
+      <TheHeader />
+      <nuxt />
+    </div>
     <TheFooter />
+
   </div>
+  
 </template>
 
 <script>
@@ -82,6 +86,10 @@ html {
       width: 100vw;
 
     }
+
+    /* h1 {
+      font-size: 50px;
+    } */
 
 }
 </style>

@@ -42,7 +42,11 @@ export default {
 
 @media screen and (min-width: 320px) and (max-width: 667px) {
     .btn-container {
-      grid-row: 2 / 3;
+      grid-row: 5 / 6;
+      grid-column: 1 / -1;
+      width: 100vw;
+      height: auto;
+      padding: 5vh 0;
     }
 }
 

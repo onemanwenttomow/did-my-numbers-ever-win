@@ -50,4 +50,13 @@ export default {
 
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+    .giphy {
+      width: 100vw;
+      height: 200px;
+      grid-row: 2 / 3;
+    }
+
+}
+
 </style>

@@ -43,6 +43,10 @@ export default {
 @media screen and (min-width: 320px) and (max-width: 667px) {
     .numbers-left-container {
       grid-row: 2 / 3;
+      grid-column: 1 / -1;
+      width: 100vw;
+      height: auto;
+      font-size: 15px;
 
     }
 

@@ -49,4 +49,14 @@ export default {
     font-size: 40px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 667px) {
+
+    .outcome-container {
+        grid-column: 1/-1;
+        grid-row: 4/5;
+    }
+
+}
+
+
 </style>
