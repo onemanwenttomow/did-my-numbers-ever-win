@@ -37,7 +37,7 @@ export default {
 
 .outcome-container {
     grid-column: 2/3;
-    grid-row: 3/4;
+    grid-row: 2/3;
     background-color: #F8E7E7;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ export default {
 
     .outcome-container {
         grid-column: 1/-1;
-        grid-row: 4/5;
+        grid-row: 3/4;
     }
 
 }

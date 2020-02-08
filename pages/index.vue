@@ -25,14 +25,21 @@ body {
 
 .home-page-container {
   grid-row: 2 / 3;
-  grid-column: 1 / 2;
+  grid-column: 1 / -1;
 
   display: grid;
   grid-gap: 5vh;
   grid-template-columns: 1fr 1fr;
-  width: 100vw;
+
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 667px) {
+    .home-page-container {
+      width: 100vw;
+    }
+
 }
 
 

@@ -14,7 +14,7 @@ footer {
     position: fixed;
     bottom: 0;
     background-color: #F8E7E7;
-    width: 500px;
+    width: 100vw;
     padding: 5px;
     text-align: center;
 }

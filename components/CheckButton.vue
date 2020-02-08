@@ -20,7 +20,7 @@ export default {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    grid-row: 3 / 4;
+    grid-row: 2 / 3;
     grid-column: 2 / 3;
 }
 
