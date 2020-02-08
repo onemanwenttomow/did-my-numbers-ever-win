@@ -54,7 +54,11 @@ export default {
     .giphy {
       width: 100vw;
       height: auto;
+    }
+
+    .giphy-container {
       grid-row: 2 / 3;
+
     }
 
 }
