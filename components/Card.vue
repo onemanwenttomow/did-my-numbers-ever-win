@@ -102,6 +102,7 @@ export default {
 
 @media screen and (min-width: 320px) and (max-width: 667px) {
     .container {
+      display: none;
       grid-column: 1/ -1;
       grid-row: 4 / 5;
       grid-template-columns: repeat(6, 1fr);
